@@ -3,7 +3,7 @@
     <img alt="Gitea" src="docs/img/logo.png" width="90"/>
   </a>
 </p>
-<h1 align="center">SeedSigner OS</h1>
+<h1 align="center">SeedSigner OS(임시, 사용 이후 삭제예정)</h1>
 
 <p align="center">
   <a href="https://opensource.org/licenses/MIT" title="License: MIT">
