@@ -1,4 +1,4 @@
-FROM debian:11
+FROM --platform=linux/arm64 debian:11
 
 # buildroot dependencies
 RUN apt-get -qq update
