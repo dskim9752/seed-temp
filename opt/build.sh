@@ -17,6 +17,7 @@ help()
       --pi0         Build for pi0 and pi0w
       --pi2         Build for pi2
       --pi02w       Build for pi02w and pi3
+      --pi02w-dpi28 Build for pi02w with 2.8\" DPI touchscreen
       --pi4         Build for pi4 and pi4cmio
   
   Options:
@@ -166,6 +167,9 @@ while (( "$#" )); do
   --pi02w)
     PI02W_FLAG=0; ((ARCH_CNT=ARCH_CNT+1)); shift
     ;;
+  --pi02w-dpi28)
+    PI02W_DPI28_FLAG=0; ((ARCH_CNT=ARCH_CNT+1)); shift
+    ;;
   --pi4)
     PI4_FLAG=0; ((ARCH_CNT=ARCH_CNT+1)); shift
     ;;
@@ -282,6 +286,11 @@ fi
 # build for pi02w
 if ! [ -z ${PI02W_FLAG} ]; then
   build_image "pi02w${DEVARG}" "${CLEAN_ARG}" "${SKIPREPO_ARG}"
+fi
+
+# build for pi02w with dpi28 touchscreen
+if ! [ -z ${PI02W_DPI28_FLAG} ]; then
+  build_image "pi02w-dpi28" "${CLEAN_ARG}" "${SKIPREPO_ARG}"
 fi
 
 # build for pi4
