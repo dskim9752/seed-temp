@@ -1,3 +1,9 @@
 *.DS_Store
 .buildroot-ccache/
 .ccache/
+
+# Build output log
+build.log
+
+# Local-only compose overrides (e.g. Windows ccache workaround)
+docker-compose.override.yml
