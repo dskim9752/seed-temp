@@ -1,0 +1,39 @@
+# This is a Linux-only buildroot/OS image repo. All scripts and config files
+# run inside a Debian container, so every text file MUST use LF line endings.
+# Windows checkouts with core.autocrlf=true would otherwise produce CRLF and
+# break shebangs (exec ./build.sh: no such file or directory) and buildroot.
+
+# Default: treat as text and always check out with LF (never CRLF).
+* text=auto eol=lf
+
+# Explicitly force LF on the files executed/parsed inside the build container.
+*.sh    text eol=lf
+*.mk    text eol=lf
+*.cfg   text eol=lf
+*.txt   text eol=lf
+*.py    text eol=lf
+*.pyx   text eol=lf
+*.in    text eol=lf
+*_defconfig text eol=lf
+Config.in   text eol=lf
+Dockerfile  text eol=lf
+
+# Binary files: never apply line-ending or text conversion.
+*.png   binary
+*.jpg   binary
+*.jpeg  binary
+*.gif   binary
+*.ico   binary
+*.ttf   binary
+*.otf   binary
+*.woff  binary
+*.woff2 binary
+*.mo    binary
+*.gpg   binary
+*.dtbo  binary
+*.dtb   binary
+*.img   binary
+*.gz    binary
+*.bz2   binary
+*.xz    binary
+*.zip   binary
